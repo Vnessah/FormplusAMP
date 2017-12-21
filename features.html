@@ -1,0 +1,342 @@
+{% extends 'base.html' %}
+{% set include_nav = true %}
+{% set include_live_chat = true %}
+{% set include_footer = true %}
+{% set active_page = "features" %}
+
+
+{% set features_nav = [
+    ('customise.svg', 'Customise Icon', '#customisation', 'Customisation'),
+    ('storage.svg', 'Storage Icon', '#storage', 'Storage'),
+    ('mobile.svg', 'Mobile Icon', '#mobile', 'Mobile Forms'),
+    ('upload.svg', 'File Icon', '#files', 'File Uploads'),
+    ('embed.svg', 'Embed Icon', '#embed', 'Embed'),
+    ('logic.svg', 'Logic Icon', '#logic', 'Form Logic'),
+    ('secure.svg', 'Secure Icon', '#secure', 'Secure'),
+    ('notification.svg', 'Notification Icon', '#notifications', 'Notifications'),
+    ('offline.svg', 'Offline Icon', '#offline', 'Offline'),
+    ('location.svg', 'Location Icon', '#location', 'Location'),
+    ('resumable.svg', 'Resumable Icon', '#resumable', 'Save & Resume'),
+] -%}
+
+
+{% block title %}Features | Formplus{% endblock %}
+
+{% block extra_head %}
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+    { (i[r].q=i[r].q||[]).push(arguments)}
+
+    ,i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-35328807-1', 'formpl.us');
+    ga('send', 'pageview');
+
+    // Load the plugin.
+    ga('require', 'linker');
+
+    // Define which domains to autoLink.
+    ga('linker:autoLink', ['fastspring.com']);
+  </script>
+
+
+  {% include 'partials/fb_pixel_code.html' %}
+  {% include 'partials/logging_partial.html' %}
+{% endblock %}
+
+{% block content %}
+<main class="features">
+  <header class="text-center">
+    <h1>Features</h1>
+    <span class="subtitle">Powerful tools to collect information rapidly.</span>
+  </header>
+
+  <nav class="navbar navbar-default" data-spy="affix" data-offset-top="197">
+  
+    {# Visible Mobile Nav #}
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fpFeaturesNav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  
+    {# Nav links #}
+    <div class="collapse navbar-collapse" id="fpFeaturesNav">
+      <div class="navbar text-center">
+        <ul class="nav navbar-nav">
+          {% for image, alt, href, caption in features_nav %}
+          <li>
+            <a href="{{ href|e }}" style="border: 0;">
+              <img src="/static/images/features/nav-icons/{{image}}" alt="{{alt}}" class="nav-icon hidden-xs">
+            </a>
+            <a href="{{ href|e }}">{{ caption|e }}</a>
+         </li>
+           {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/form-builder.jpg" alt="Form Builder">
+          </a>     
+        </div>
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Easy To Use Form Builder</h3>
+          <p>Our easy to use form builder allows you to create powerful forms within minutes - simply click or drag and drop your desired form fields into the builder. Our form builder also works on mobile devices.</p>
+          <p>Save time. Select from a wide range of prebuilt <a href="" class="brand-text">form templates</a> to ease your form building process.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+      </div>
+      
+      <hr>
+
+      <div class="row" id="customisation">
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Be Stylish With Your Forms</h3>
+          <p>Don’t just send out basic forms, let your forms represent you. Create beautiful forms tailored to your brand using the various customisation options available.</p>
+          <p>Go even further and create forms in your language of choice.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/customisation.jpg" alt="Form Customisation">
+          </a>
+        </div>
+      </div>
+      <hr>
+      
+      <div class="row" id="storage">
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/cloudstorage.jpg" alt="Cloud Storage">
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Store Data In Your Cloud Storage</h3>
+          <p>We are flexible. You can choose to store your received data in your cloud storage of choice (Google Drive and Dropbox available currently). The cloud storage support helps you easily fit in received data from your forms into your normal workflow.</p>
+          <p>You can optionally choose to store your received data in Formplus database</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="row" id="mobile">
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Responsive Forms For Mobile Devices</h3>
+          <p>Formplus forms are designed to look and work great on all devices. Form(s) created are responsive and adaptable to the type of device they are being viewed on.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/responsive-forms.jpg" alt="Responsive Forms">
+          </a>
+        </div>
+      </div>
+      <hr>
+
+       <div class="row" id="files">
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/unlimited-uploads.jpg" alt="File Uploads">
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Flexible and Unlimited File Uploads</h3>
+          <p>There are no limitations to the number, size, or type of files you can receive on your forms. You can choose to rename files received with a user input/form data for better file management.</p>
+          <p>Restrict the size and/or type of files that your form users can upload with our file vaidation options.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="row" id="embed">
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Embed Forms On Your Website</h3>
+          <p>With Formplus, you can easily embed your form into any webpage as an iframe or pop-up.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/form-embed.jpg" alt="Form Embed">
+          </a>
+        </div>
+      </div>
+      <hr>
+      
+      <div class="row" id="logic">
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/form-logic.gif" alt="Conditional Logic">
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Build Smart Forms With Logic</h3>
+          <p>Personalize your user experience by using conditional logic to tailor your forms. Show or hide form fields based on answers provided by respondents, giving you short forms with better conversion rate. </p>
+          <p>Redirect your form users to another website or form after a successful form submission. Make a field required. Break long forms into multi-pages or even divide single page forms into different sections for an improved experience.</p>
+
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+      </div>
+      
+      <hr>
+
+      <div class="row" id="secure">
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Secure Forms</h3>
+          <p>
+            All Form+ forms are SSL enabled, making sure that all connections between your web browser and our servers are secure 100% of the time. SSL remains the standard for ensuring data being sent to a web server from a browser is encrypted. 
+          </p>
+          <p>
+            To add an extra layer of security in your forms, you can use CAPTCHA to keeps spam and bogus information from being submitted to your web forms.
+          </p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/secure-forms.jpg" alt="Secure Forms">
+          </a>
+        </div>
+      </div>
+      <hr>
+
+       <div class="row" id="notifications">
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/notifcations.jpg" alt="Email Notifications">
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Receive And Route Email Notifications</h3>
+          <p>Receive email notifications of submissions based on your prefferred schedule, receive user submitted data in the email body and as a PDF/Word attachment. Route form data and submission notifications to other members of your team, once users complete your form.</p>
+          <p>With autoresponders, send out a custom message to users as a confirmation email upon successful form submission. You can also include a copy of their submitted responses in the confirmation email.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="row" id="offline">
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Offline Data Collection <span class="label label-default">Beta</span></h3>
+          <p>Increase your audience reach by collecting data even without internet access</p>
+          <p>Using conversational SMS, you can collect data on phones, tablets, and other devices. This allows you collect data in remote locations, or places without reliable internet connection. It can also serve as a backup to the standard online data collection form especially in cases where you have unreliable WiFi, such as large conferences and field surveys.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/sms.png" alt="SMS Forms">
+          </a>
+        </div>
+      </div>
+      <hr>
+
+       <div class="row" id="location">
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="img-responsive" src="/static/images/features/location.jpg" alt="Geolocation Forms">
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Location Based Forms</h3>
+          <p>With the user’s consent, the location feature allows you to determine the physical location of the person who is filling out your form. This feature uses Google Maps Web Services to pinpoint the nearest physical address</p>
+          <p>You can view locations individually or see where all responses are coming from at a glance on a map.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="row" id="resumable">
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">Save Forms And Continue Filling Later</h3>
+          <p>Give your form users the opportunity o save partially filled forms and continue filling it at a more convenient time from any device or browser.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/save-resume.jpg" alt="Resumable Forms">
+          </a>
+        </div>
+      </div>
+      <hr>
+
+       <div class="row">
+        <div class="col-xs-12 col-sm-7">
+          <a href="#">
+            <img class="center" src="/static/images/features/field-types.png" alt="Field Types">
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-5 feature">
+          <h3 class="brand-text">20 Field Types And Counting</h3>
+          <p>Formplus has variety of field types to help you easy data collection. They range from text fields, number field, email field, file upload field, ratings field, matrix field, scale, date and time picker, checkboxes, dropdowns, radio buttons, image field, video field, and much more</p>
+          <p>All fields have various validation options to ensure you receive the right responses.</p>
+          <!-- <a class="btn btn-primary" href="#">Learn More</a> -->
+        </div>
+      </div>
+      <hr>
+      
+    </div>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3"></div>
+      <div class="col-xs-6 col-sm-6 text-center">
+        <a href="/all_features" class="btn btn-lg btn-primary" target="_blank">View All Features</a>
+      </div>
+      <div class="col-xs-3 col-sm-3"></div>
+    </div>   
+  </section>
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1005768479;
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */  
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1005768479/?value=1&amp;guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+  <script type="text/javascript">
+    /* Set features nav to active on cick */
+    $(document).ready(function () {
+      $(".nav li").on("click", function () {
+          $(".nav li").removeClass("active");
+          $(this).addClass("active");
+        });
+    });
+      /* Animate features nav scrolling */
+    $(document).ready(function () {
+        $('a[href^="#"]').on('click', function (e) {
+          e.preventDefault();
+
+          var target = this.hash;
+          var $target = $(target);
+
+          $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - 150
+          }, 900, 'swing');
+        });
+      });
+  </script>
+
+  {% include 'partials/fp_tracking.html' %}
+{% endblock %}

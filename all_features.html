@@ -1,0 +1,362 @@
+{% extends 'base.html' %}
+{% set include_nav = true %}
+{% set include_live_chat = true %}
+{% set include_footer = true %}
+{% set active_page = "pricing" %}
+
+{% block title %}All Features | Formplus{% endblock %}
+
+{% set base_features = [
+  ('Drag & Drop Form Builder', 'Free', 'Core', 'Pro', 'Unlimited', 'Simply drag and drop your form fields into the builder, it’s that easy!' ),
+
+  ('Unlimited File Uploads', 'Free', 'Core', 'Pro', 'Unlimited', 'Receive file uploads of any size and number on your forms.' ),
+
+  ('Mobile Friendly Forms', 'Free', 'Core', 'Pro', 'Unlimited', 'Your forms are fully responsive and accessible on all mobile devices.' ),
+
+  ('24/7 Support', 'Free', 'Core', 'Pro', 'Unlimited', 'Email support available to all customers round the clock' ),
+
+  ('Multi-page Forms', 'Free', 'Core', 'Pro', 'Unlimited', 'Break long forms into multi-pages. Includes a progress bar and page counter to help indicate progress.' ),
+
+  ('Google Sheets Integration', 'Free', 'Core', 'Pro', 'Unlimited', 'Receive responses straight into your Google Sheets' ),
+
+  ('Unlimited Form Views', 'Free', 'Core', 'Pro', 'Unlimited', 'There is no limit to the amount of times your form links can be clicked on or viewed.' ),
+
+  ('Unlimited Form Fields', 'Free', 'Core', 'Pro', 'Unlimited', 'No limits on the number of form fields you can add to a form ' ),
+
+  ('Embeddable Forms', 'Free', 'Core', 'Pro', 'Unlimited', 'Embed any of your forms on your website as an iframe/popup or as an embed on your Facebook page. ' ),
+
+  ('Unlimited Forms', 'Free', 'Core', 'Pro', 'Unlimited', 'Create as many forms as you want, no holds barred.' ),
+
+  ('Form Templates', 'Free', 'Core', 'Pro', 'Unlimited', 'Save time by creating your form off any of our templates' ),
+
+  ('Question Validation', 'Free', 'Core', 'Pro', 'Unlimited', 'Various form input validation option including email, phone, number, word & character count, date/time, etc ' ),
+
+  ('File Upload Validation', 'Free', 'Core', 'Pro', 'Unlimited', 'Validate files to be uploaded on your form by size and/or type of file' ),
+
+  ('Required or Mandatory Fields', 'Free', 'Core', 'Pro', 'Unlimited', 'Make a question required so your forms users have to provide an answer before submitting' ),
+
+  ('Social Sharing', 'Free', 'Core', 'Pro', 'Unlimited', 'Easily share your forms via the form link, shortened link, email, and to your social media pages.' ),
+
+  ('Image, Video & Description Fields', 'Free', 'Core', 'Pro', 'Unlimited', 'Add images, links and text to your forms, embed a Youtube or Vimeo video.' ),
+
+] -%}
+
+{% set form_options = [
+  ('Custom Welcome Page', '', 'Core', 'Pro', 'Unlimited', 'Add a custom message or instructions before your form respondents start filling a form.' ),
+
+  ('Custom Message After Submission', '', 'Core', 'Pro', 'Unlimited', ' Include a custom final message for your form respondents.' ),
+
+  ('Redirect After Submission', '', '', 'Pro', 'Unlimited', ' Redirect your users to another website or your homepage once the hit the submit button.' ),
+
+  ('Submit Multiple Responses', '', 'Core', 'Pro', 'Unlimited', 'Allow users easily submit another response after each form submission. ' ),
+
+  ('Submission Limit', 'Free', 'Core', 'Pro', 'Unlimited', 'Set the number of submissions you will like to receive on a form after which the form is closed' ),
+
+  ('Submission Deadline', 'Free', 'Core', 'Pro', 'Unlimited', 'Set a deadline for form submission. The form is closed after selected date.' ),
+
+  ('Transfer Forms', '', 'Core', 'Pro', 'Unlimited', 'Transfer any of the forms you create to another Form+ account with ease.' ),
+
+  ('Transfer Form+ Data', '', '', '', 'Unlimited', 'Include form responses and uploaded files (if any) while transferring forms' ),
+
+  ] -%}
+
+{% set notification_options = [
+  ('Autoresponders', '', 'Core', 'Pro', 'Unlimited', 'Send a confirmation email to your respondents upon successful form submission.' ),
+
+  ('Send User Submitted Data', '', 'Core', 'Pro', 'Unlimited', 'Include the form respondent’s submitted data when sending a confirmation email.' ),
+
+  ('Submission Notifications', 'Free', 'Core', 'Pro', 'Unlimited', ' Receive notification emails of submissions to your form(s)' ),
+
+  ('Notification Frequency', 'Free', 'Core', 'Pro', 'Unlimited', ' Schedule when to receive notification emails - upon submission, daily, weekly, or monthly.' ),
+
+  ('Response in Notification', '', '', 'Pro', 'Unlimited', ' Include user submitted data in submission notification email body.' ),
+
+  ('Attachment in Notification', '', '', '', 'Unlimited', 'Convert submitted data to a PDF/Word file to be attached in notification email.' ),
+
+  ('Send Notification to Others', '', '', 'Pro', 'Unlimited', 'Route form notifications and data received to multiple email addresses.' ),
+
+  ] -%}
+
+{% set storage_options = [
+  ('Dropbox Support', 'Free', 'Core', 'Pro', 'Unlimited', 'You can choose to store your uploaded files in your Dropbox.' ),
+
+  ('Google Drive Support', 'Free', 'Core', 'Pro', 'Unlimited', 'You can choose to store your uploaded files in your Google Drive.' ),
+
+] -%}
+
+{% set security_options = [
+  ('SSL Forms', 'Free', 'Core', 'Pro', 'Unlimited', 'SSL ensures connection between any web browser and our servers are secure.' ),
+
+  ('Captcha', 'Free', 'Core', 'Pro', 'Unlimited', 'Captcha helps secure your forms from spammers and robots.' ),
+
+] -%}
+
+{% set customization_options = [
+  ('Form Themes', '', 'Core', 'Pro', 'Unlimited', 'Use any of our cool form themes to style your form and switch your colours.' ),
+
+  ('Form Layout', '', 'Core', 'Pro', 'Unlimited', 'Change your form’s layout to a side-by-side view, right-to-left view, or leave it in its default mode.' ),
+
+  ('Background Images in Forms', '', 'Core', 'Pro', 'Unlimited', 'Add an image to be used as background design for your forms.' ),
+
+  ('Customize Buttons', '', 'Core', 'Pro', 'Unlimited', 'Control how your buttons appear by changing the button colour and default submit button text.' ),
+
+  ('Unbranded Forms', '', '', '', 'Unlimited', 'Make your forms represent your organisation! Remove all Form+ branding.' ),
+
+  ('Add Logo to Forms', '', '', '', 'Unlimited', 'Add your organisation/brand logo to your forms ' ),
+
+  ('Form Fonts', '', 'Core', 'Pro', 'Unlimited', 'Change the default fonts in your form from our selection of top 100 Google fonts.' ),
+
+  ('Custom CSS', '', '', '', 'Unlimited', 'Add your own CSS to further customise your forms to your style.' ),
+
+  ('Form Colours', '', 'Core', 'Pro', 'Unlimited', 'Change the colours in your forms (page background and text color).' ),
+  
+] -%}
+
+{% block extra_head %}
+  
+  {% include 'partials/fb_pixel_code.html' %}
+  {% include 'partials/logging_partial.html' %}
+{% endblock %}
+
+{% block content %}
+{# Large pricing details#}
+<main class="pricing monthly" id="pricingContainer">
+    <header class="text-center">
+    <h1>Details of all Formplus Plans </h1>
+    <span class="subtitle">Browse our plans and features to find and select one that suits your data collection needs.</span>
+  </header>
+  <section class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12" id="allFeatures">
+          <table class="table table-striped plan-tables">
+            <tr class="hidden-xs">
+              <th>Features</th>
+              <th>Free</th>
+              <th>Core</th>
+              <th>Pro</th>
+              <th>Unlimited</th>
+            </tr>
+
+            <tr class="hidden-sm">
+              <th></th>
+              <th>${{plans.free_plan.get_pricing_monthly()}}</th>
+              <th>
+                <span class="monthly-plan">${{plans.core_subscription.get_pricing_monthly()}}</span>
+                <span class="yearly-plan">${{plans.core_subscription_yearly.get_pricing_monthly()}}</span>
+              </th>
+              <th>
+
+                <span class="monthly-plan">${{plans.pro_subscription.get_pricing_monthly()}}</span>
+                <span class="yearly-plan">${{plans.pro_subscription_yearly.get_pricing_monthly()}}</span>
+              </th>
+              <th>
+                <span class="monthly-plan">${{plans.unlimited_subscription.get_pricing_monthly()}}</span>
+                <span class="yearly-plan">${{plans.unlimited_subscription_yearly.get_pricing_monthly()}}</span>
+              </th>
+            </tr>
+            <tr class="section-header">
+              <td>Submissions/Month</td>
+              <td>50</td>
+              <td>500</td>
+              <td>1000</td>
+              <td>Unlimited</td>
+            </tr>
+
+
+            <tr class="section-header">
+              <td>Base Features</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            {% for title, free, core, pro, unlimited, description in base_features %}
+              <tr>
+                <td data-placement="top" class="text-nowrap">
+                  {{ title }}  <small>
+                                  <i class="glyphicon glyphicon-info-sign" data-toggle='tooltip' title="{{ description }}"></i>
+                                </small> 
+                </td>
+                <td>{% if title == 'Unlimited Forms' %}5
+                    {% else %}+
+                    {% endif %}</td>
+                <td>{% if core %}+{% endif %}</td>
+                <td>{% if pro %}+{% endif %}</td>
+                <td>{% if unlimited %}+{% endif %}</td>
+              </tr>
+            {% endfor %}
+
+            <tr class="section-header">
+              <td>Form Options</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+          {% for title, free, core, pro, unlimited, description in form_options %}
+              <tr>
+                <td data-placement="top" data-toggle="tooltip" title="" class="text-nowrap">
+                  {{ title }}  <small>
+                                  <i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="{{ description }}"></i>
+                                </small> 
+                </td>
+                <td>{% if free %}+{% endif %}</td>
+                <td>{% if core %}+{% endif %}</td>
+                <td>{% if pro %}+{% endif %}</td>
+                <td>{% if unlimited %}+{% endif %}</td>
+              </tr>
+            {% endfor %}
+
+            <tr class="section-header">
+              <td>Notifications</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            {% for title, free, core, pro, unlimited, description in notification_options %}
+              <tr>
+                <td data-placement="top" class="text-nowrap">
+                  {{ title }}  <small>
+                                  <i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title= "{{description}}"></i>
+                                </small> 
+                </td>
+                <td>{% if free %}+{% endif %}</td>
+                <td>{% if core %}+{% endif %}</td>
+                <td>{% if pro %}+{% endif %}</td>
+                <td>{% if unlimited %}+{% endif %}</td>
+              </tr>
+            {% endfor %}
+
+
+
+            <tr class="section-header">
+              <td data-placement="top" data-toggle="tooltip" title="">
+                Storage
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            {% for title, free, core, pro, unlimited, description in storage_options %}
+              <tr>
+                <td data-placement="top" class="text-nowrap">
+                  {{ title }} <small>
+                                <i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="{{ description }}"></i>
+                              </small> 
+                </td>
+                <td>{% if free %}+{% endif %}</td>
+                <td>{% if core %}+{% endif %}</td>
+                <td>{% if pro %}+{% endif %}</td>
+                <td>{% if unlimited %}+{% endif %}</td>
+              </tr>
+            {% endfor %}
+
+
+            <tr class="section-header">
+              <td data-placement="top" data-toggle="tooltip" title="">
+                Security
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            {% for title, free, core, pro, unlimited, description in security_options %}
+              <tr>
+                <td data-placement="top" class="text-nowrap">
+                  {{ title }} <small><i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="{{ description }}"></i></small> 
+                </td>
+                <td>{% if free %}+{% endif %}</td>
+                <td>{% if core %}+{% endif %}</td>
+                <td>{% if pro %}+{% endif %}</td>
+                <td>{% if unlimited %}+{% endif %}</td>
+              </tr>
+            {% endfor %}
+
+
+            <tr class="section-header">
+              <td data-placement="top" data-toggle="tooltip" title="">
+                Form Customization
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            {% for title, free, core, pro, unlimited, description in customization_options %}
+              <tr>
+                <td data-placement="top"">
+                  {{ title }} <small><i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="{{ description }}"></i></small> 
+                </td>
+                <td>{% if free %}+{% endif %}</td>
+                <td>{% if core %}+{% endif %}</td>
+                <td>{% if pro %}+{% endif %}</td>
+                <td>{% if unlimited %}+{% endif %}</td>
+              </tr>
+            {% endfor %}
+
+            <tr>
+              <td></td>
+              <td>
+                {% if plan.is_free() and logged %}
+                  <button href="#" class="btn btn-primary" disabled="">Current Plan</button>
+
+                  {% else %}
+                  <a href="/free-plan" class="btn btn-black">Choose Plan</a>
+                {% endif %}
+              </td>
+              <td>
+                {% if plan.is_core() %}
+                  <button class="btn btn-primary" disabled="">Current Plan</button>
+
+                  {% else %}
+                  <a href="/basic-plan" class="btn btn-black">Choose Plan</a>
+                {% endif %}
+              </td>
+              <td>
+                {% if plan.is_pro()  %}
+                  <button class="btn btn-primary" disabled="">Current Plan</button>
+
+                  {% else %}
+                  <a href="/standard-plan" class="btn btn-black">Choose Plan</a>
+                {% endif %}
+              </td>
+              <td>
+                {% if plan.is_unlimited() %}
+                  <button class="btn btn-primary" disabled="">Current Plan</button>
+
+                  {% else %}
+                  <a href="/premium-plan" class="btn btn-black">Choose Plan</a>
+                {% endif %}
+              </td>
+            </tr>
+
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+
+
+{% block extra_scripts %}
+  
+  <noscript>
+    <div>
+    <img height="1" width="1" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1005768479/?value=1&amp;guid=ON&amp;script=0"/>
+    </div>
+  </noscript>
+
+  {% include 'partials/fp_tracking.html' %}
+{% endblock %}

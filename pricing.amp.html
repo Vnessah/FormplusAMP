@@ -1,0 +1,482 @@
+{% extends 'base.amp.html' %}
+{% set include_nav = true %}
+{% set include_live_chat = true %}
+{% set include_footer = true %}
+{% set active_page = "pricing" %}
+
+{% block title %}Pricing | Formplus{% endblock %}
+
+{% block extra_head %}
+  {% include 'partials/fb_pixel_code.html' %}
+  {% include 'partials/logging_partial.html' %}
+{% endblock %}
+
+{% block content %}
+<main class="pricing yearly" id="pricingContainer">
+      <header class="text-center">
+        <h1>Pricing Plans</h1>
+        <span class="subtitle">Flexible plans that you can cancel anytime</span>
+      </header>
+
+      <section>
+        <div class="text-center">
+          <div class="plan-switcher">
+            <button class="yearly-button active">Yearly</button>
+            <button class="monthly-button">Monthly</button>
+          </div>
+
+          <div class="plan-switcher">
+            <br/> <br/>
+            <em> 20% discount on all yearly plans.</em>
+          </div>
+        </div>
+
+        <div class="container desktop-content">
+          <div class="row">
+            <div class="col-xs-1 col-sm-1"></div>
+
+            <div class="col-xs-10 col-sm-10">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <div class="plan colored">
+                    <div>
+                      <h3>Core</h3>
+
+                      <span class="responses monthly-plan">${{plans.core_subscription.get_pricing_monthly()}} Monthly</span>
+                      <span class="responses yearly-plan">${{plans.core_subscription_yearly.get_pricing_monthly()}} Monthly</span>
+
+                      {% if plan.is_core()  and plan.is_monthly() %}
+                        <button class="btn btn-default monthly-plan" disabled=""><a href="#">Current Plan</a></button>
+
+                        <span class="yearly-plan yearly-text">You are on the monthly plan</span>
+
+                        {% elif plan.is_core()  and not plan.is_monthly() %}
+                        <button class="btn btn-default yearly-plan" disabled=""><a href="#">Current Plan</a></button>
+
+                        <span class="monthly-plan yearly-text">You are on the yearly plan</span>
+
+                        {% else %}
+                        <span class="additional yearly-plan">Payable Yearly</span>
+                        <a href="/subscribe/core_subscription"
+                          class="btn btn-default monthly-plan">
+                            Choose Plan
+                        </a>
+                        <a href="/subscribe/core_subscription_yearly"
+                          class="btn btn-default yearly-plan">
+                            Choose Plan
+                        </a>
+                      {% endif %}
+
+                    </div>
+                    <ul>
+                      <li data-toggle="tooltip" title="Number of responses that can be submitted on all your forms in a month">{{plans.core_subscription.submissions_per_month}} submissions/month</li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li><span class="rounded">&#10004;</span></li>
+                      <li>
+                        <span class="rounded unavailable">&mdash;</span>
+                      </li>
+                      <li><span class="rounded unavailable">&mdash;</span></li>
+                      <li>
+                        <span class="rounded unavailable">&mdash;</span>
+                      </li>
+                      <li><span class="rounded unavailable">&mdash;</span></li>
+                      <li>
+                        <span class="rounded unavailable">&mdash;</span>
+                      </li>
+                      
+                    </ul>
+
+                  </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-4">
+                  <div class="plan colored pro-plan">
+                    <div class="">
+                      <h3>Pro</h3>
+
+                      <span class="responses monthly-plan">${{plans.pro_subscription.get_pricing_monthly()}} Monthly</span>
+                      <span class="responses yearly-plan">${{plans.pro_subscription_yearly.get_pricing_monthly()}} Monthly</span>
+
+                      {% if plan.is_pro()  and plan.is_monthly() %}
+                        <button class="btn btn-default monthly-plan" disabled=""><a href="#">Current Plan</a></button>
+
+                        <span class="yearly-plan yearly-text">You are on the monthly plan</span>
+
+                        {% elif plan.is_pro()  and not plan.is_monthly() %}
+                        <button class="btn btn-default yearly-plan" disabled=""><a href="#">Current Plan</a></button>
+
+                        <span class="monthly-plan yearly-text">You are on the yearly plan</span>
+
+                        {% else %}
+                        <span class="additional yearly-plan only_white">Payable Yearly</span>
+
+                        <a href="/subscribe/standard_subscription"
+                          class="btn btn-default monthly-plan">
+                            Choose Plan
+                        </a>
+                        <a href="/subscribe/standard_subscription_yearly"
+                          class="btn btn-default yearly-plan">
+                            Choose Plan
+                        </a>
+                      {% endif %}
+                    </div>
+
+                    <ul>
+                      <li class="only_white" data-toggle="tooltip" title="Number of responses that can be submitted on all your forms in a month">{{plans.pro_subscription.submissions_per_month}} submissions/month</li>
+
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>
+                      <li>
+                        <span class="rounded">&#10004;</span>
+                      </li>  
+                      <li><span class="rounded unavailable">&mdash;</span></li>
+                      <li><span class="rounded unavailable">&mdash;</span></li>
+                      <li>
+                        <span class="rounded unavailable">&mdash;</span>
+                      </li>
+                      <li><span class="rounded unavailable">&mdash;</span></li>
+                    </ul>
+
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4">
+                  <div class="plan colored">
+                    <div>
+                      <h3>Unlimited</h3>
+
+                      <span class="responses monthly-plan">${{plans.unlimited_subscription.get_pricing_monthly()}} Monthly</span>
+                      <span class="responses yearly-plan">${{plans.unlimited_subscription_yearly.get_pricing_monthly()}} Monthly</span>
+
+                      {% if plan.is_unlimited() and plan.is_monthly() %}
+                        <amp-app-banner>
+                          <button class="btn btn-default monthly-plan margin_button" disabled=""><a href="#">Current Plan</a></button>
+                        </amp-app-banner>
+                        <span class="yearly-plan yearly-text">You are on the monthly plan</span>
+
+                        {% elif plan.is_unlimited() and not plan.is_monthly() %}
+                        <span class="monthly-plan yearly-text">You are on the yearly plan</span>
+
+                        <amp-app-banner>
+                          <button class="btn btn-default yearly-plan margin_button" disabled=""><a href="#">Current Plan</a></button>
+                        </amp-app-banner>
+                        {% else %}
+                        <span class="additional yearly-plan">Payable Yearly</span>
+                        <a href="/subscribe/premium_subscription"
+                          class="btn btn-default monthly-plan">
+                            Choose Plan
+                        </a>
+                        <a href="/subscribe/premium_subscription_yearly"
+                          class="btn btn-default yearly-plan">
+                            Choose Plan
+                        </a>
+                      {% endif %}
+
+                    </div>
+
+                    <ul>
+                      <li data-toggle="tooltip" title="Number of responses that can be submitted on all your forms in a month">Unlimited Submissions</li>
+                      <li data-toggle="tooltip" title="Total number of forms you can have in your account">Unlimited Forms</li>
+                      <li data-toggle="tooltip" title="All features available on all Formplus plans">
+                        <a href="/all_features" target="_blank">Base Features</a>
+                      </li>
+                      <li data-toggle="tooltip" title="No limit to the size of files that can be uploaded in a form or stored in your cloud storage">Unlimited File Uploads</li>
+                      <li data-toggle="tooltip" title="Store uploaded files in Google Drive or Dropbox. Receive submissions in Google Sheets.">Cloud Integration</li>
+                      <li data-toggle="tooltip" title="Hide or show form fields based on a previous selection/input">Conditional Logic</li>
+                      <li data-toggle="tooltip" title="Various themes and customisation options to make your forms represent your brand">Themes & Form Customisation</li>
+                      <li data-toggle="tooltip" title="All forms are secured with SSL encryption. Use Captcha to prevent spam submission by bots.">SSL & Captcha</li>
+                      <li data-toggle="tooltip" title="Get the location of each submission, see where all responses are coming from on a map">Geolocation Forms</li>
+                      <li data-toggle="tooltip" title=" Automatically send a customised email to form respondents after submission including the submitted response.">Custom Autoresponder</li>
+                      <li data-toggle="tooltip" title="Receive email notification for form submissions at your preferred schedule">Email Notifications</li>
+                      <li data-toggle="tooltip" title="Redirect form respondents to another website or form, after successful submission">Redirect after Submission</li>
+                      <li data-toggle="tooltip" title="Convert user submitted data to PDF or Word document and include in email notifications. ">PDF/Doc Reports</li>
+                      <li data-toggle="tooltip" title="Let your form respondents submit responses offline through a conversational SMS">SMS Submissions</li>
+                      <li data-toggle="tooltip" title="Add your own CSS to further customise your forms">Custom CSS</li>
+                      <li data-toggle="tooltip" title="No Formplus logo shown on your forms ">Unbranded Forms</li>
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-4"></div>
+                  <div class="col-xs-12 col-sm-4 text-center">
+                    <a href="/control" class="btn btn-block btn-primary" target="_blank">Start out with the Free Plan</a>
+                    <p></p>
+                    <a href="/all_features" class="brand-text" target="_blank"><u>Compare All Features</u></a>
+                  </div>
+                  <div class="col-xs-12 col-sm-4"></div>
+                </div>
+                
+            </div>
+            
+            <div class="col-xs-1 col-sm-1"></div>
+          </div>
+
+         </div>
+        <!--End Desktop View-->
+        <!--Start Mobile View-->
+        <div class="container mobile-content"> 
+          <div class="row"> 
+            <div class="col-sm-4"> 
+              <div class="plan colored"> 
+                <h3>Core</h3> 
+                <span class="responses monthly-plan">$10 / MONTH</span> 
+                <span class="responses yearly-plan">$8 / MONTH</span><br> 
+                <span class="additional yearly-plan">Payable Yearly</span><br> 
+                <a href="/subscribe/core_subscription" class="btn btn-default monthly-plan"> Choose Plan </a> 
+                <a href="/subscribe/core_subscription_yearly" class="btn btn-default yearly-plan"> Choose Plan </a> 
+                <a class="text-right plan-detail" href="/all_features">+ Plan Detail</a> 
+              </div> 
+            </div> 
+            <div class="col-sm-4"> 
+              <div class="plan colored pro-plan"> 
+                <h3>Pro</h3> 
+                <span class="responses monthly-plan">$20 / MONTH</span> 
+                <span class="responses yearly-plan">$16 / MONTH</span><br> 
+                <span class="additional yearly-plan">Payable Yearly</span><br> 
+                <a href="/subscribe/standard_subscription" class="btn btn-default monthly-plan"> Choose Plan </a> 
+                <a href="/subscribe/standard_subscription_yearly" class="btn btn-default yearly-plan"> Choose Plan </a> 
+                <a class="text-right plan-detail" href="/all_features">+ Plan Detail</a> 
+              </div> 
+            </div> 
+            <div class="col-sm-4"> 
+              <div class="plan colored"> 
+                <h3>Unlimited</h3> 
+                <span class="responses monthly-plan">$45 / MONTH</span> 
+                <span class="responses yearly-plan">$36 / MONTH</span><br> 
+                <span class="additional yearly-plan">Payable Yearly</span><br> 
+                <a href="/subscribe/premium_subscription" class="btn btn-default monthly-plan"> Choose Plan </a> 
+                <a href="/subscribe/premium_subscription_yearly" class="btn btn-default yearly-plan"> Choose Plan </a> 
+                <a class="text-right plan-detail" href="/all_features">+ Plan Detail</a> 
+              </div> 
+            </div> 
+          </div>
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 text-center">
+              <a href="/control" class="btn btn-primary" target="_blank">Start out with the Free plan</a>
+              <p></p>
+              <a href="/all_features" class="brand-text" target="_blank"><u>Compare All Plans</u></a>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </div>
+        <!--End Mobile View-->
+      </section>
+
+      <section class="testimonial">
+        <div class="container">
+      
+          <div id="testimonialCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+      
+            <!-- Carousel Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="1"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="2"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="3"></li>
+            </ol>
+      
+            <!-- Slide wrapper -->
+            <div class="carousel-inner" role="listbox">
+      
+              <div class="item active">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-7 text-right">
+                    <p>
+                      Using Formplus has decreased our time and cost ten times over. We have saved ourselves some  paper and the cost of printing out paper applications. We can access data much quicker and documents can easily be uploaded for review before we accept students. It is also 100% faster to obtain enrollment applications.
+                    </p>
+                  </div>
+      
+                  <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                    <amp-img src="/static/images/external/brand-logos/virgina-richard.JPG" class="" alt="Polk Edu Logo" width="120" height="80" layout="responsive"><noscript><img src="/static/images/external/brand-logos/virgina-richard.JPG" class="" alt="Polk Edu Logo"></noscript></amp-img>
+                    <span>Virginia,
+                      <a href="https://www.polk.edu/polk-state-lakeland-collegiate-high-school/" target="_blank">Polk State College Charter School</a>
+                    </span>
+                  </div>
+      
+                </div>
+              </div>
+              <div class="item">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-7 text-right">
+                    <p>
+                      "Form+ is the exact solution I needed to expand my client base and improve communication with my clients. Form+ has saved
+                      my company time, energy and effort so I can concentrate on the bigger picture and goals of my business. The way it
+                      interacts with google is also a huge help."
+                    </p>
+                  </div>
+                
+                  <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                    <amp-img src="/static/images/external/brand-logos/paradox.jpeg" alt="Paradox Logo" width="120" height="80" layout="responsive"><noscript><img src="/static/images/external/brand-logos/paradox.jpeg" alt="Paradox Logo"></noscript></amp-img>
+                    <span>Levi, Leaves LLC</span>
+                  </div>
+                
+                </div>
+              </div>
+              <div class="item">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-7 text-right">
+                    <p>
+                      "Form+ is an affordable tool that helped us go paperless and saved us a lot of time. We use the saved time in doing other
+                      productive work."
+                    </p>
+                  </div>
+      
+                  <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                    <amp-img src="/static/images/external/brand-logos/kellton-tech.png" class="img-thumbnail" alt="Kellton Tech Logo" width="120" height="80" layout="responsive"><noscript><img src="/static/images/external/brand-logos/kellton-tech.png" class="img-thumbnail" alt="Kellton Tech Logo"></noscript></amp-img>
+                    <span>Itee,
+                      <a href="https://www.kelltontech.com/" target="_blank">Kellton Tech</a>
+                    </span>
+                  </div>
+      
+                </div>
+      
+              </div>
+              <div class="item">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-7 text-right">
+                    <p>
+                      "Form+ has decreased the time spent in receiving CVs and analysing them. Now with Form+, no much time is spent during recruitment
+                      process which saved time for the HR Department to be more productive"
+                    </p>
+                  </div>
+      
+                  <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                    <amp-img src="/static/images/external/brand-logos/adra.png" class="img-thumbnail" alt="Adra Logo" width="120" height="80" layout="responsive"><noscript><img src="/static/images/external/brand-logos/adra.png" class="img-thumbnail" alt="Adra Logo"></noscript></amp-img>
+                    <span>Marwa,
+                      <a href="http://www.adrayemen.org/" target="_blank">Adra Yemen</a>
+                    </span>
+                  </div>
+      
+                </div>
+      
+              </div>
+      
+            </div>
+      
+            <!-- Left and right controls -->
+            <a class="left carousel-control hidden-xs" href="#testimonialCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control hidden-xs" href="#testimonialCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+      
+          </div>
+        </div>
+      </section>
+
+
+      <section class="container glyphs">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 text-left">
+              
+            <h3><span class="glyphicon glyphicon-refresh"></span> Auto-Renewal</h3>
+
+            <p>Formplus is a recurring subscription service and will continue to renew until you cancel. It auto-renews at the end of a subscription period (30 days for monthly plan, 365 days for yearly plan). To prevent auto-renewal, cancel your subscription before the end of your current subscription period.</p>
+
+          </div>
+          <div class="col-xs-12 col-sm-4 text-left">
+             
+            <h3> <span class="glyphicon glyphicon-eject"></span> Cancel Anytime</h3>
+            <p>You can upgrade, downgrade, or cancel your subscription at any time. All these options are available from your Account page or can be done by <a href="http://support.formpl.us/customer/portal/emails/new">contacting support</a></p>
+
+          </div>
+          <div class="col-xs-12 col-sm-4 text-left">
+            
+            <h3><span class="glyphicon glyphicon-check text-nowrap"></span> 30 Day Money Back Guarantee</h3>
+            <p>If for any reason you decide you want to cancel your account within 30 days of your payment, we will issue a full refund if you have not received any responses.</p>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 text-left">
+           
+            <h3> <span class="glyphicon glyphicon-user"></span> Customer Support</h3>
+            <p>Apart from our <a href="http://support.formpl.us/">support center</a>, we provide 24/7 email support services to all customers. You can <a href="http://support.formpl.us/customer/portal/emails/new">submit a ticket</a> or email <a href="mailto:support@formpl.us">support@formpl.us</a> to contact our support team. Support emails are typically responded to within 2 hours.</p>
+
+          </div>
+          <div class="col-xs-12 col-sm-4 text-left">
+            
+            <h3><span class="glyphicon glyphicon-gift"></span> Nonprofit Discount</h3>
+            <p>As a way of saying thank you to nonprofit organizations, eligible users can apply for a 20% discount off any of our plans including the yearly plans which already comes with a 20% discount. If you represent a nonprofit organization, <a href="http://support.formpl.us/customer/portal/emails/new">contact us</a>  to request for the nonprofit discount.</p>
+
+          </div>
+          <div class="col-xs-12 col-sm-4 text-left">
+           
+            <h3><span class="glyphicon glyphicon-book" ></span> Education Discount</h3>
+            <p>Formplus is proud to support our educators and school administrators. Education users qualify for a 20% discount off any of our plans including the yearly plans which already comes with a 20% discount. If you are an educator, <a href="http://support.formpl.us/customer/portal/emails/new">contact us</a> to request for the educational discount.</p>
+          </div>
+        </div>
+        
+      </section>
+      <section class="get-started">
+        <div class="row text-center">
+          <div class="col-xs-12">
+            <h2>Yet to decide which of the plans suits your needs?</h2>
+            <p>Why not try it out for free? You can upgrade to a paid plan at a later time.</p>
+            <h2>
+              <a href="/control" class="btn btn-lg btn-white">Get Started For Free</a>
+            </h2>
+          </div>
+        </div>
+      
+      </section>
+    </main>
+{% endblock %}
+
+{% block extra_scripts %}
+  <noscript>
+      <div>
+      <img height="1" width="1" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1005768479/?value=1&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript> 
+  {% include 'partials/fp_tracking.html' %}
+{% endblock %}
+

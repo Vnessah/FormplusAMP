@@ -1,0 +1,54 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="formbuilder, google forms, mobile friendly, limit responses, save to cloud, submission deadline, phone number validation, upload on google form">
+  <meta name="description" content="Formplus is an easy-to-use form builder which allows anyone build forms on top of their cloud storage services. With over 2.5 million forms filled in 2017 already, Form+ has users in over 100 countries and has been used by staff in organizations including Stanford University, UNIDO and Go-Jek.">
+  <meta name="author" content="">
+
+  <link rel="canonical" href="{{}}">
+  <link rel="icon" href="/static/images/favicon.ico" type="image/ico">
+  <title>{% block title %}{% endblock %} - Online Form Builder &amp; Data Collection Tool</title>
+  {% if self.head() %}
+      {% block head %}{% endblock %}
+
+      {# INFO: If no head block supplied, load the bootstrap files for the external pages.#}
+    {% else %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/external/external.css">
+        {# INFO: Extra head tags - styles, scripts etc for a particular page.#}
+        {% block extra_head %}{% endblock %}
+  {% endif %}
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+</head>
+
+<body class="{{ active_page }}">
+  {% include 'partials/components/icons.svg' %}
+
+  {% if include_nav %}
+  {% include 'partials/components/nav.html' %}
+  {% endif %}
+
+  {% block content %}{% endblock %}
+
+  {% if include_footer %}
+  {% include 'partials/components/footer.html' %}
+  {% endif %}
+
+  {# INFO: If no scripts block supplied, load the bootstrap files for the external pages.#}
+  {% if self.scripts() %}
+  {% block scripts %}{% endblock %}
+
+  {% else %}
+
+  {# INFO: Extra head tags - styles, scripts etc for a particular page.#}
+  {% block extra_scripts %}{% endblock %}
+  {% endif %}
+
+</body>
+</html>

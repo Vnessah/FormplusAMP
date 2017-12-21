@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {# TODO: Open Graph tags #}
+    <meta name="keywords" content="formbuilder, google forms, mobile friendly, limit responses, save to cloud, submission deadline, phone number validation, upload on google form">
+    <meta name="description" content="Formplus is an easy-to-use form builder which allows anyone build forms on top of their cloud storage services. With over 2.5 million forms filled in 2017 already, Form+ has users in over 100 countries and has been used by staff in organizations including Stanford University, UNIDO and Go-Jek.">
+    <meta name="author" content="">
+
+    <link rel="icon" href="/static/images/favicon.ico" type="image/ico" />
+
+    <title>{% block title %}{% endblock %} - Online Form Builder &amp; Data Collection Tool</title>
+
+    {% if self.head() %}
+      {% block head %}{% endblock %}
+
+      {# INFO: If no head block supplied, load the bootstrap files for the external pages.#}
+      {% else %}
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="/static/css/external/external.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        {# INFO: Extra head tags - styles, scripts etc for a particular page.#}
+        {% block extra_head %}{% endblock %}
+    {% endif %}
+    <script> window['_fs_debug'] = false; window['_fs_host'] = 'fullstory.com'; window['_fs_org'] = '8K75K'; window['_fs_namespace'] = 'FS'; (function(m,n,e,t,l,o,g,y){ if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;} g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[]; o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js'; y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y); g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)}; g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)}; g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){ d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+ ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}}; })(window,document,window['_fs_namespace'],'script','user'); </script>
+    {% if include_live_chat %}
+      {% include 'partials/live_chat.html' %}
+    {% endif %}
+
+  </head>
+  <body class="{{ active_page }}">
+    {% include 'partials/components/icons.svg' %}
+
+    {% if include_nav %}
+      {% include 'partials/components/nav.html' %}
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+    {% if include_footer %}
+    {% include 'partials/components/footer.html' %}
+    {% endif %}
+
+    {# INFO: If no scripts block supplied, load the bootstrap files for the external pages.#}
+    {% if self.scripts() %}
+      {% block scripts %}{% endblock %}
+
+      {% else %}
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+      </script>
+
+      {# INFO: Extra head tags - styles, scripts etc for a particular page.#}
+      {% block extra_scripts %}{% endblock %}
+    {% endif %}
+
+
+  </body>
+</html>

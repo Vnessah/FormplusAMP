@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+  <html amp lang="en">
+    <head>
+      <meta charset="utf-8">
+      
+      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="keywords" content="formbuilder, google forms, mobile friendly, limit responses, save to cloud, submission deadline, phone number validation, upload on google form">
+      <meta name="description" content="Formplus is an easy-to-use form builder which allows anyone build forms on top of their cloud storage services. With over 2.5 million forms filled in 2017 already, Form+ has users in over 100 countries and has been used by staff in organizations including Stanford University, UNIDO and Go-Jek.">
+      <meta name="author" content="">
+
+      <link rel="canonical" href="/index.html">
+      <link rel="icon" href="/static/images/favicon.ico" type="image/ico">
+      <title>Formplus - Online Form Builder &amp; Data Collection Tool</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+      <link rel="stylesheet" href="/static/css/external/external.css">
+     
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <style amp-custom>
+          sub{font-size: 10px;} amp-iframe{border:none;width:90%;overflow:hidden;} iframe{border:none;width:90%;overflow:hidden;} img{border-style:none;} div.inline{display:inline;} svg {position: absolute; width: 0; height: 0; overflow: hidden;} amp-img.logo { width: auto; height: 50px; margin-top: 30px; } img.logo { width: auto; height: 50px; margin-top: 30px; }
+
+      </style>
+
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  </head>
+
+  <body class="index">
+    <svg version=1.1 xmlns=http://www.w3.org/2000/svg> 
+      <defs>
+        <symbol id=icon-social-facebook viewbox="0 0 24 24"> 
+          <title>social-facebook</title> 
+          <path d="M13 10h3v3h-3v7h-3v-7h-3v-3h3v-1.255c0-1.189 0.374-2.691 1.118-3.512 0.744-0.823 1.673-1.233 2.786-1.233h2.096v3h-2.1c-0.498 0-0.9 0.402-0.9 0.899v2.101z"></path> 
+        </symbol>
+        <symbol id=icon-facebook viewbox="0 0 32 32"> 
+          <title>facebook</title>
+          <path d="M19 6h5v-6h-5c-3.86 0-7 3.14-7 7v3h-4v6h4v16h6v-16h5l1-6h-6v-3c0-0.542 0.458-1 1-1z"></path> 
+        </symbol>
+        <symbol id=icon-cloud viewbox="0 0 20 20">
+          <title>cloud</title>
+          <path d="M20 11.32c0 2.584-2.144 4.68-4.787 4.68h-11.596c-1.998 0-3.617-1.584-3.617-3.537 0-1.951 1.619-3.535 3.617-3.535 0.146 0 0.288 0.012 0.429 0.027-0.037-0.246-0.057-0.498-0.057-0.756 0-2.871 2.381-5.199 5.32-5.199 2.407 0 4.439 1.562 5.096 3.707 0.263-0.043 0.532-0.066 0.809-0.066 2.642 0 4.786 2.093 4.786 4.679z"></path>
+        </symbol>
+        <symbol id=icon-lock viewbox="0 0 20 20">
+          <title>lock</title>
+          <path d="M15.8 8h-1.8v-2.4c0-2.897-1.335-4.6-4-4.6s-4 1.703-4 4.6v2.4h-2c-0.553 0-1 0.646-1 1.199v7.801c0 0.549 0.428 1.139 0.951 1.307l1.197 0.387c0.524 0.167 1.402 0.306 1.952 0.306h5.8c0.549 0 1.428-0.139 1.951-0.307l1.196-0.387c0.524-0.167 0.953-0.757 0.953-1.306v-7.801c0-0.553-0.648-1.199-1.2-1.199zM12 8h-4v-2.801c0-1.445 0.797-2.199 2-2.199s2 0.754 2 2.199v2.801z"></path>
+        </symbol>
+        <symbol id=icon-google viewbox="0 0 20 20">
+          <title>google</title>
+          <path d="M1.989 5.589c0 1.494 0.499 2.572 1.482 3.205 0.806 0.52 1.74 0.598 2.226 0.598 0.118 0 0.213-0.006 0.279-0.010 0 0-0.154 1.004 0.59 1.996h-0.034c-1.289 0-5.493 0.269-5.493 3.727 0 3.516 3.861 3.695 4.636 3.695 0.061 0 0.097-0.002 0.097-0.002 0.008 0 0.063 0.002 0.158 0.002 0.497 0 1.782-0.062 2.975-0.643 1.548-0.75 2.333-2.059 2.333-3.885 0-1.764-1.196-2.814-2.069-3.582-0.533-0.469-0.994-0.873-0.994-1.266 0-0.4 0.337-0.701 0.762-1.082 0.689-0.615 1.339-1.492 1.339-3.15 0-1.457-0.189-2.436-1.354-3.057 0.121-0.062 0.551-0.107 0.763-0.137 0.631-0.086 1.554-0.184 1.554-0.699v-0.099h-4.599c-0.046 0.002-4.651 0.172-4.651 4.389zM9.413 14.602c0.088 1.406-1.115 2.443-2.922 2.574-1.835 0.135-3.345-0.691-3.433-2.096-0.043-0.676 0.254-1.336 0.835-1.863 0.589-0.533 1.398-0.863 2.278-0.928 0.104-0.006 0.207-0.012 0.31-0.012 1.699 0.001 2.849 0.999 2.932 2.325zM8.212 4.626c0.451 1.588-0.23 3.246-1.316 3.553-0.125 0.035-0.253 0.052-0.384 0.052-0.994 0-1.979-1.006-2.345-2.393-0.204-0.776-0.187-1.458 0.047-2.112 0.229-0.645 0.643-1.078 1.163-1.225 0.125-0.035 0.254-0.053 0.385-0.053 1.2 0 1.972 0.498 2.45 2.178zM16 8v-3h-2v3h-3v2h3v3h2v-3h3v-2h-3z"></path>
+        </symbol>
+        <symbol id=icon-instagram viewbox="0 0 20 20">
+          <title>instagram</title>
+          <path d="M17 1h-14c-1.1 0-2 0.9-2 2v14c0 1.101 0.9 2 2 2h14c1.1 0 2-0.899 2-2v-14c0-1.1-0.9-2-2-2zM9.984 15.523c3.059 0 5.538-2.481 5.538-5.539 0-0.338-0.043-0.664-0.103-0.984h1.581v7.216c0 0.382-0.31 0.69-0.693 0.69h-12.614c-0.383 0-0.693-0.308-0.693-0.69v-7.216h1.549c-0.061 0.32-0.104 0.646-0.104 0.984 0 3.059 2.481 5.539 5.539 5.539zM6.523 9.984c0-1.912 1.55-3.461 3.462-3.461s3.462 1.549 3.462 3.461-1.551 3.462-3.462 3.462c-1.913 0-3.462-1.55-3.462-3.462zM16.307 6h-1.615c-0.382 0-0.692-0.312-0.692-0.692v-1.617c0-0.382 0.31-0.691 0.691-0.691h1.615c0.384 0 0.694 0.309 0.694 0.691v1.616c0 0.381-0.31 0.693-0.693 0.693z"></path>
+        </symbol>
+        <symbol id=icon-twitter viewbox="0 0 20 20">
+          <title>twitter</title>
+          <path d="M17.316 6.246c0.008 0.162 0.011 0.326 0.011 0.488 0 4.99-3.797 10.742-10.74 10.742-2.133 0-4.116-0.625-5.787-1.697 0.296 0.035 0.596 0.053 0.9 0.053 1.77 0 3.397-0.604 4.688-1.615-1.651-0.031-3.046-1.121-3.526-2.621 0.23 0.043 0.467 0.066 0.71 0.066 0.345 0 0.679-0.045 0.995-0.131-1.727-0.348-3.028-1.873-3.028-3.703 0-0.016 0-0.031 0-0.047 0.509 0.283 1.092 0.453 1.71 0.473-1.013-0.678-1.68-1.832-1.68-3.143 0-0.691 0.186-1.34 0.512-1.898 1.861 2.285 4.644 3.787 7.781 3.945-0.064-0.277-0.097-0.564-0.097-0.861 0-2.084 1.689-3.773 3.774-3.773 1.086 0 2.067 0.457 2.756 1.191 0.859-0.17 1.667-0.484 2.397-0.916-0.282 0.881-0.881 1.621-1.66 2.088 0.764-0.092 1.49-0.293 2.168-0.594-0.506 0.758-1.146 1.422-1.884 1.953z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    
+    <main>
+      <header class="landing-section">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fpDesktopNav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand larger" href="/">
+              <amp-img src="/static/images/logo/formplus-logo.png" alt="FormPlus logo" width="130" height="40">
+                <noscript>
+                  <img src="/static/images/logo/formplus-logo.png" alt="FormPlus logo">
+                </noscript>
+              </amp-img>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="fpDesktopNav">
+            <div class="navbar-right">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="/pricing.amp.html" target="_self">Pricing</a>
+                </li>
+                <li>
+                  <a href="/features.amp.html" target="_self">Features</a>
+                </li>
+                <li>
+                  <a href="/showcase" target="_self">Showcase</a>
+                </li>
+                <li>
+                  <a href="https://blog.formpl.us" target="_blank">Blog</a>
+                </li>
+
+                <li>
+                  <div class="nav-action">
+                    {% if logged %}
+                    <a href="/control" class="btn btn-default">Dashboard</a>
+                    {% else %}
+                    <a href="/control" class="btn btn-default">Login{% endif %}</a>
+                    {% end if %}
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="landing__title">
+          <h2 class="subtext-rotate">
+            <span>Be More Productive</span>
+            <span>Create Powerful Forms</span>
+            <span>Be More Efficient</span>
+            <span>Create Forms That Convert</span>
+            <span>Be More Stylish</span>
+            <span>Create Beautiful Forms</span>
+            <br>
+            <br>
+          </h2>
+          <h2>
+            <span class="light-text">Offline<sub>Beta</sub> and Online Forms, with Ease</span>
+            <br>
+            <br>
+          </h2>
+
+          <a href="/control" class="btn btn-primary btn-xlarge">Sign Up For Free</a>
+        </div>
+
+        <a href="#" class="scroll-down"></a>
+      </header>
+
+      <section class="feature-overview hidden-xs">
+        <div class="container">
+          <amp-img class="transparent" src="/static/images/external/formplus-builder.jpg" alt="Formplus overview" width="100" height="50" layout="responsive"><noscript><img class="transparent" src="/static/images/external/formplus-builder.jpg" alt="Formplus overview"></noscript></amp-img>
+        </div>
+      </section>
+
+      <section class="features-list">
+        <div class="row text-center">
+          <div class="col-xs-12">
+            <h1>Formplus Allows You <span class="brand-text">Manage Data</span> Efficiently</h1>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/offline.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/offline.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Online and Offline</h3>
+              </div>
+              <span class="subtitle">Forms can be filled and distributed online and offline - Formplus is a flexible tool that helps you collect data from anyone, anywhere in the world, with or without internet access.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/support.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/support.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>24/7 Support</h3>
+              </div>
+              <span class="subtitle">We are happy to help! All our plans offer awesome support via email or live chat round the clock. We also love to receive feedback and suggestions from our users.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/file.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/file.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Unlimited File Uploads</h3>
+              </div>
+              <span class="subtitle">Create forms with file upload fields to receive and store files of any size or type in your cloud storage. You can also restrict the size or type of files that can be uploaded.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/cloud.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/cloud.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Cloud Integration</h3>
+              </div>
+              <span class="subtitle">Responses and files can be stored in your Google Drive or Dropbox accounts, so you don't have to pay for extra storage. Integrate this with your workflow and collaborate better with your team.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/logic.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/logic.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Conditional Logic</h3>
+              </div>
+              <span class="subtitle">Allow your users to skip form questions based on previous answers, giving them a more fluid experience. Show/hide fields or conditionally require a field, thus letting users save time while filling a form.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/location.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/location.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Geolocation Forms</h3>
+              </div>
+              <span class="subtitle">Easily get the location of where each submission on your form is coming from. With the help of Google Mapsweb services, you can also see where all form responses are coming from on a map at a glance.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/notification.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/notification.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Email Notifications</h3>
+              </div>
+              <span class="subtitle">Set up notifications of submission(s) for yourself, your team or even your responders! You can also include files uploaded to your form as attachments in the email notification, and attach a PDF/Word document copy of form entries.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/customise.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/customize.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Customisable Forms</h3>
+              </div>
+              <span class="subtitle">From your mind to reality, bring your forms to life by customizing it to suit your brand. Choose from our selection of ready to use themes, beautiful fonts, backgrounds, and colours.</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 item">
+              <div>
+                <amp-img src="/static/images/external/ai-extracts/save.svg" alt="Feature Logo" class="icon" width="52" height="52" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/save.svg" alt="Feature Logo" class="icon"></noscript></amp-img>
+                <h3>Save &amp; Continue Later</h3>
+              </div>
+              <span class="subtitle">Allow users fill long forms faster when you allow them save partial responses to continue filling later. Upon partial submission, they will get a link that can be used to fill the form from any device.</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <a href="/all-features" target="_blank" class="btn btn-default btn-lg">View All Features</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial">
+        <div class="container">
+
+          <div id="testimonialCarousel" class="carousel slide" data-ride="carousel" data-interval="7000">
+
+            <!-- Carousel Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#testimonialCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="1"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="2"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="3"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="4"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="5"></li>
+              <li data-target="#testimonialCarousel" data-slide-to="6"></li>
+            </ol>
+
+            <!-- Slide wrapper -->
+            <div class="carousel-inner" role="listbox">
+
+              <div class="item active">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-7 text-right">
+                    <p>
+                      Form+ has made our testing and scoring process smoother. Their customer service team has been very prompt in resolving any
+                      issues that we have faced.
+                    </p>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                    <amp-img src="/static/images/external/brand-logos/avanti.png" class="img-thumbnail" alt="Avanti Logo" width="120" height="100" layout="responsive">
+                      <noscript>
+                        <img src="/static/images/external/brand-logos/avanti.png" class="img-thumbnail" alt="Avanti Logo">
+                      </noscript>
+                    </amp-img>
+                    <span>Pritesh,
+                      <a href="http://avanti.in/" target="_blank">Avanti Learning Centres</a>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+              <div class="item">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-7 text-right">
+                    <p>
+                      "Form+ is an affordable tool that helped us go paperless and saved us a lot of time. We use the saved time in doing other productive work."
+                    </p>
+                  </div>
+                  
+                  <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                    <amp-img src="/static/images/external/brand-logos/kellton-tech.png" class="img-thumbnail" alt="Kellton Tech Logo" width="120" height="100" layout="responsive">
+                      <noscript>
+                        <img src="/static/images/external/brand-logos/kellton-tech.png" class="img-thumbnail" alt="Kellton Tech Logo">
+                      </noscript>
+                    </amp-img>
+                    <span>Itee,
+                      <a href="https://www.kelltontech.com/" target="_blank">Kellton Tech</a>
+                    </span>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class="item">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-7 text-right">
+                    <p>
+                      "Form+ has helped us solve the issue of unorganized data collection. By using Form+, all the data is collected into one place. It's easy to read, easy to access from multiple devices,
+                      easy to share the data, and easy to find any of the data collected."
+                    </p>
+                  </div>
+                  
+                  <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                    <amp-img src="/static/images/external/brand-logos/pe.jpg" class="img-thumbnail" alt="Perfomance Equipment Logo" width="120" height="100" layout="responsive">
+                      <noscript>
+                        <img src="/static/images/external/brand-logos/pe.jpg" class="img-thumbnail" alt="Perfomance Equipment Logo">
+                      </noscript></amp-img>
+                      <span>Noah,
+                        <a href="http://pequipment.com/" target="_blank">Perfomance Equipment</a>
+                      </span>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="row">
+                    <center>
+                      <div class="col-xs-12 col-sm-12">
+                        <p>
+                          <blockquote class="twitter-tweet" data-lang="en">
+                            <p lang="en" dir="ltr">Nice to see
+                              <a href="https://twitter.com/FormPlusApp?ref_src=twsrc%5Etfw">@FormPlusApp</a> on stage at
+                              <a href="https://twitter.com/hashtag/TCBattlefield?src=hash&amp;ref_src=twsrc%5Etfw">#TCBattlefield</a> . We use formplus for our applications
+                              <a href="https://twitter.com/akirachix?ref_src=twsrc%5Etfw">@akirachix</a> and love it, seamless.</p>&mdash; Linda Kamau (@Lkamau)
+                              <a href="https://twitter.com/Lkamau/status/918012754358886400?ref_src=twsrc%5Etfw">October 11, 2017</a>
+                            </blockquote>
+                          </p>
+                        </div>
+                      </center>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-7 text-right">
+                        <p>
+                          "Form+ has decreased the time spent in receiving CVs and analysing them. Now with Form+, no much time is spent during recruitment process which saved time for the HR Department to be more productive"
+                        </p>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                        <amp-img src="/static/images/external/brand-logos/adra.png" class="img-thumbnail" alt="Adra Logo" width="120" height="100" layout="responsive">
+                          <noscript>
+                            <img src="/static/images/external/brand-logos/adra.png" class="img-thumbnail" alt="Adra Logo">
+                          </noscript>
+                        </amp-img>
+                        <span>Marwa,
+                          <a href="http://www.adrayemen.org/" target="_blank">Adra Yemen</a>
+                        </span>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-7 text-right">
+                        <p>
+                          "Our experience with Form+ has been transparent and inextricably important to the work that we achieve. Our users find
+                          it secure and easy to use, and we find it very easy to put together! The customer service is prompt and very thorough."
+                        </p>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-5 text-center testimonial-user">
+                        <amp-img src="/static/images/external/brand-logos/kitchen-connection-logo.png" class="img-thumbnail" alt="Kitchen Connection Logo" width="120" height="100" layout="responsive">
+                          <noscript>
+                            <img src="/static/images/external/brand-logos/kitchen-connection-logo.png" class="img-thumbnail" alt="Kitchen Connection Logo">
+                          </noscript>
+                        </amp-img>
+                        <span>Earlene,
+                          <a href="https://kitchenconnection.org/" target="_blank">Kitchen Connection</a>
+                        </span>
+                      </div>
+
+                    </div>          
+                  </div>
+                  <div class="item">
+                    <div class="row">
+                     <center>
+                      <div class="col-xs-12 col-sm-12">
+                        <amp-iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fformplusapp%2Fposts%2F956337307840974&width=auto&show_text=true&appId=300779186977018&height=194"
+                        width="250" height="194" scrolling="no" frameborder="0" layout="responsive"><noscript><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fformplusapp%2Fposts%2F956337307840974&width=auto&show_text=true&appId=300779186977018&height=194"
+                        width="auto" height="194" scrolling="no" frameborder="0"></iframe></noscript></amp-iframe>
+                      </div>
+                    </center>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control hidden-xs" href="#testimonialCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control hidden-xs" href="#testimonialCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+
+            </div>
+          </div>
+        </section>
+
+        <section class="brand-logos">
+
+          <div class="container">
+            <div class="row text-center">
+              <div class="col-xs-12">
+                <h2>You're in <span class="brand-text">Safe</span> Hands</h2>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-4 col-sm-2">
+                <a href="https://adra.org/" target="_blank">
+                  <amp-img src="/static/images/external/brand-logos/adra.png" alt="Adra Logo" class="center-block" width="130" height="100" layout="responsive">
+                    <noscript>
+                      <img src="/static/images/external/brand-logos/adra.png" alt="Adra Logo" class="center-block">
+                    </noscript>
+                  </amp-img>
+                </a>
+              </div>
+
+              <div class="col-xs-4 col-sm-2">
+                <a href="https://www.careem.com/" target="_blank">
+                  <amp-img src="/static/images/external/brand-logos/careem.png" alt="Careem Logo" class="center-block logo" width="55" height="50">
+                    <noscript>
+                      <img src="/static/images/external/brand-logos/careem.png" alt="Careem Logo" class="center-block logo">
+                    </noscript>
+                  </amp-img>
+                </a>
+              </div>
+
+              <div class="col-xs-4 col-sm-2">
+                <a href="https://www.motorolasolutions.com/" target="_blank">
+                  <amp-img src="/static/images/external/brand-logos/motorola-solutions.png" alt="Motorola Logo" class="center-block" width="130" height="100" layout="responsive">
+                    <noscript>
+                      <img src="/static/images/external/brand-logos/motorola-solutions.png" alt="Motorola Logo" class="center-block">
+                    </noscript>
+                  </amp-img>
+                </a>
+              </div>
+
+              <div class="col-xs-4 col-sm-2">
+                <a href="http://www.polk.edu/lchs" target="_blank">
+                  <amp-img src="/static/images/external/brand-logos/polk-edu.png" alt="Polk State Lakeland Collegiate Logo" class="center-block logo" width="90" height="80" layout="responsive">
+                    <noscript>
+                      <img src="/static/images/external/brand-logos/polk-edu.png" alt="Polk State Lakeland Collegiate Logo" class="center-block logo">
+                    </noscript>
+                  </amp-img>
+                </a>
+              </div>
+
+              <div class="col-xs-4 col-sm-2">
+                <a href="https://solarcar.stanford.edu/" target="_blank">
+                  <amp-img src="/static/images/external/brand-logos/stanford-solar-car-project.png" alt="Stanford Solar Car Project Logo" class="center-block" width="130" height="100" layout="responsive">
+                    <noscript>
+                      <img src="/static/images/external/brand-logos/stanford-solar-car-project.png" alt="Stanford Solar Car Project Logo" class="center-block">
+                    </noscript>
+                  </amp-img>
+                </a>
+              </div>
+
+              <div class="col-xs-4 col-sm-1">
+                <a href="https://www.go-jek.com/" target="_blank">
+                  <amp-img src="/static/images/external/brand-logos/gojek-logo.jpg" alt="GO-JEK Logo" class="center-block logo" width="300" height="250" layout="responsive">
+                    <noscript>
+                      <img src="/static/images/external/brand-logos/gojek-logo.jpg" alt="GO-JEK Logo" class="center-block logo">
+                    </noscript>
+                  </amp-img>
+                </a>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-xs-12">
+              <h1>Start Using
+                <span class="brand-text">Formplus</span> With Ease</h1>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class="col-xs-6 col-sm-3">
+                <div class="circular-div">
+                  <amp-img src="/static/images/external/ai-extracts/sign-up.png" alt="Sign Up Icon" width="80" height="80" layout="responsive">
+                    <noscript>
+                      <img src="/static/images/external/ai-extracts/sign-up.png" alt="Sign Up Icon">
+                    </noscript>
+                  </amp-img>
+                </div>
+                <h3 class="heavy-text">Sign Up</h3>
+                <p>Join 70,000 amazing people already using Formplus to optimise their processes. <a href="/control" class="brand-text">Sign up now!</a></p>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <div class="circular-div">
+                  <amp-img src="/images/external/ai-extracts/create-form.png" alt="Create Form Icon" width="80" height="80" layout="responsive">
+                    <noscript>
+                      <img src="/images/external/ai-extracts/create-form.png" alt="Create Form Icon">
+                    </noscript>
+                  </amp-img>
+                </div>
+                <h3 class="heavy-text">Create Form</h3>
+                <p><a href="/control" class="brand-text">Build your form</a> within minutes. Style it using various customisation options or leave it as default if you wish.</p>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <div class="circular-div">
+                  <amp-img src="/images/external/ai-extracts/shareform.png" alt="Share Form Icon" width="80" height="80" layout="responsive">
+                    <noscript>
+                      <img src="/images/external/ai-extracts/shareform.png" alt="Share Form Icon">
+                    </noscript>
+                  </amp-img>
+                </div>
+                <h3 class="heavy-text">Share Form</h3>
+                <p>Share your form link via email, social media, or simply embed it on your website. You can also add respondents phone numbers to fill the form <a href="https://blog.formpl.us/we-went-to-battle-and-returned-with-a-new-feature-for-you-d61bc5f4c1bb" class="brand-text" target="_blank">via SMS</a>.</p>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <div class="circular-div">
+                  <amp-img src="/static/images/external/ai-extracts/receive-data.png" alt="Receive Data Icon" width="48" height="48" layout="responsive"><noscript><img src="/static/images/external/ai-extracts/receive-data.png" alt="Receive Data Icon"></noscript></amp-img>
+                </div>
+                <h3 class="heavy-text">Receive Data</h3>
+                <p>Receive submission notifications and submitted data as PDF/DOC attachments. Store data in your cloud storage or on our servers.</p>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <section class="get-started">
+          <div class="row text-center">
+            <div class="col-xs-12">
+              <h2>Over 13,650,000 Form Submissions So Far</h2>
+              <p>Ready to start creating forms with Formplus? Don't wait any longer</p>
+              <h2>
+                <a href="/control" class="btn btn-lg btn-white">Get Started For Free</a>
+              </h2>
+            </div>
+          </div>
+      </section>
+
+      <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button">
+          <span class="glyphicon glyphicon-arrow-up"></span>
+          Back to top
+      </a>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-3">
+            <a href="https://blog.formpl.us/">Blog</a>
+            <a href="http://support.formpl.us/">Resources</a>
+            <a href="http://support.formpl.us/customer/en/portal/topics/1084808-faqs/articles">FAQ</a>
+          </div>
+
+          <div class="col-xs-6 col-sm-3">
+            <a href="/showcase">Showcase</a>
+            <a href="/pricing">Pricing</a>
+            <a href="http://support.formpl.us/">Support</a>
+          </div>
+
+          <div class="col-xs-6 col-sm-3">
+            <a href="/terms_and_privacy#privacy">Privacy Policy</a>
+            <a href="/terms_and_privacy">Terms &amp; Conditions</a>
+          </div>
+
+          <div class="col-xs-6 col-sm-3">
+            <a href="https://www.facebook.com/formplusapp" class="social" target="_blank">
+              <svg class="icon icon-cloud"><use xlink:href="#icon-social-facebook"></use></svg><span class="name"></span>
+            </a>
+            <a href="https://twitter.com/formplusapp" class="social" target="_blank">
+              <svg class="icon icon-twitter-with-circle"><use xlink:href="#icon-twitter"></use></svg><span class="name"></span>
+            </a>
+            <a href="https://www.instagram.com/formplusapp/" class="social" target="_blank">
+              <svg class="icon icon-instagram"><use xlink:href="#icon-instagram"></use></svg><span class="name"></span>
+            </a>
+            <a href="https://plus.google.com/112476820654125256979" class="social" target="_blank">
+              <svg class="icon icon-google"><use xlink:href="#icon-google"></use></svg><span class="name"></span>
+            </a>
+          </div>
+
+          <div class="col-xs-12 text-center copyright">
+            <span>ALL RIGHTS RESERVED &copy; FORMPLUS 2017</span>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <noscript>
+      <div>
+        <img height="1" width="1" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1005768479/?value=1&amp;guid=ON&amp;script=0"/>
+      </div>
+    </noscript>
+  </body>
+</html>
